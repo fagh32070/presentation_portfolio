@@ -1,0 +1,313 @@
+@charset "UTF-8";
+/*..........Author: Fahimeh Ghaderi..........*/
+/*..........General styling..........*/
+html, body {
+    height: 100%;
+    scroll-snap-type: y mandatory;
+}
+:root {
+    font-size: calc(.5vw + .5vh + .25vmin);
+}
+body {
+    font-family: Handlee;
+    line-height: 1.25;
+    margin: 0;
+    background-color:#FFFAFA;
+
+}
+
+
+/*..........Grid Container about me..........*/
+.item1 {
+    grid-area: myArea;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .';
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.grid-container-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	}
+
+.grid-container-text{
+    line-height: 1.5;
+    text-align: left;
+    line-break: loose;
+    font-size: 23px;
+    color: #343138;
+}
+
+/* ..........3 Image design for 3 part..........*/
+
+@media screen and (min-width: 320px) {
+
+section {
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.section-footer {
+    height: 50%;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+
+#frontpage-box {
+    width: 60%;
+	position: absolute;
+	left: 20%;
+	top: 30%;
+}
+
+#welcome-pic {
+	width: 100%;
+	height: 560px;
+	background-image: url(../image/intro-pic.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+#portfolio-box {
+    width: 100%;
+	position: absolute;
+	left: .5%;
+	top: 135%;
+}
+
+#portfolio-pic {
+	width: 100%;
+	height: 580px;
+	background-image: url(../image/portfolio-pic.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+#aboutme-pic {
+	width: 100%;
+	height: 200px;
+	background-image: url(../image/DSC02390.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+#footer-pic {
+	width: 100%;
+	height: 190px;
+	background-image: url(../image/footer-pic.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+}
+
+/*..........Navigation..........*/
+nav {
+    background-color: #FFFAFA;
+    display: flex;
+    padding: 40px;
+    text-align: center;
+    justify-self: center;
+
+}
+
+nav ul {
+    padding: 0px;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+nav li:not(:last-child) {
+    border-right: 1px solid #343138;
+    text-align: right;
+}
+
+nav a {
+    border-bottom: 3px solid #343138;
+    color: #343138;
+    text-decoration: none;
+}
+
+nav a:hover {
+    border-bottom: 3px solid #86D0D1;
+}
+
+/*..........Text Animation for sections..........*/
+
+h6{
+    color: #343138;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Tangerine;
+    letter-spacing: 10px;
+    cursor: pointer;
+    padding:10px;
+}
+h6 span{
+    transition: .5s linear
+}
+h6:hover span:nth-child(1){
+    margin-right: .5px
+}
+h6:hover span:nth-child(1):after{
+    content: "'";
+}
+h6:hover span:nth-child(2){
+    margin-left: 30px
+}
+h6:hover span{
+    color: #fff;
+    text-shadow:
+    0 0 10px #86D0D1,
+    0 0 20px #86D0D1,
+    0 0 40px #86D0D1;
+}
+
+/*..........Image gallery for portfolio..........*/
+.gallery {
+    display: flex;
+    padding: 2px;
+    transition: 0.3s;
+
+}
+.gallery:hover .gallery__image {
+    filter: grayscale(1);
+}
+.gallery__column {
+    display: block flow;
+    flex-direction: column;
+    width: 30%;
+}
+
+.gallery__link {
+    margin: 2px;
+    overflow: hidden;
+}
+.gallery__link:hover .gallery__image {
+    filter: grayscale(0);
+}
+.gallery__link:hover .gallery__caption {
+    opacity: 1;
+}
+.gallery__thumb {
+    position: relative;
+}
+.gallery__image {
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+    border-radius: 10%;
+}
+.gallery__image:hover {
+    transform: scale(1.1);
+}
+.gallery__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px 15px 15px;
+    width: 100%;
+    font-family: Handlee;
+    font-size: 150%;
+    color: #FFFAFA;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+}
+
+/*..........Contact..........*/
+.contact-container {
+    display: flex;
+    justify-content: left;
+    height: 100%;
+}
+
+.object {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+}
+
+.object__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid var(--highlight-color);
+    border-radius: 50%;
+}
+
+.object__intro {
+    position: absolute;
+    top: 70%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 300px;
+    padding-left: 20px;
+    color: var(--highlight-color);
+    text-align: left;
+}
+
+.object__intro-text {
+    line-height: 1.5;
+    text-align: left;
+    line-break: loose;
+    font-size: 25px;
+    color: #343138;
+}
+
+/*..........Footer..........*/
+.footer-content {
+	text-align: center;
+	background-color: #FFFAFA;
+	padding-bottom: 15px;
+}
+
+.social-logo {
+	width: 60px;
+	margin: 0 20px;
+}
+
+.arrow-up {
+	width: 50px;
+	margin: 0 10px;
+}
+
+.footer-shape {
+    padding: 0;
+    width: 100px;
+    margin: 5px 2px;
+}
+
