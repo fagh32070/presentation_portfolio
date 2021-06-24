@@ -3,7 +3,6 @@
 /*..........General styling..........*/
 html, body {
     height: 100%;
-    scroll-snap-type: y mandatory;
 }
 :root {
     font-size: calc(.5vw + .5vh + .25vmin);
@@ -15,8 +14,136 @@ body {
     background-color:#FFFAFA;
 
 }
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+/*.....Menu...*/
+ul {
+  position: fixed;
+  width: 25%;
+  left: 0;
+  z-index: 5;
+}
+
+li {
+  float: left;
+  display: inline-block;
+  font-size: 2px;
+}
+
+li a {
+  display: block;
+  color: #343138;
+  }
+/*.....Logo...*/
+#logo{
+  float:left;
+  width:250px;
+  height:250px;
+  padding: 10px 20px;
+  padding-left: 20px;
+}
+
+/*.....Intro pic...*/
+#welcome-pic {
+	width: 480%;
+	height: 2200px;
+	background-image: url(../image/intro-pic.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
 
 
+#portfolio-pic {
+	width: 480%;
+	height: 800px;
+	background-image: url(../image/gallery/bg.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+#footer-pic {
+	width: 480%;
+	height: 150px;
+	background-image: url(../image/footer-pic.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+/*.....Gallery pic...*/
+
+.gallery__column {
+    display: block flow;
+    flex-direction: row;
+    width: 700px;
+    top: 50%;
+}
+
+.gallery__thumb {
+  display: inline-table;
+  width: 110%;
+  height: 200%;
+}
+.gallery__image {
+    display: inline-table;
+    width: 20%;
+    height: 20%;
+}
+
+/*.....About me...*/
+.item1 {
+    grid-area: myArea;
+    width: 300%;
+    height: 150%;
+}
+
+.grid-container-text{
+    line-height: 1.5;
+    text-align: center;
+    line-break: loose;
+    font-size: 30px;
+    color: #343138;
+    padding-left: 70px;
+}
+
+.grid-container-image {
+	display: block;
+	width: 150%;
+	height: auto;
+  padding-left: 70px;
+}
+
+/*..........Footer..........*/
+.footer-content {
+	text-align: center;
+	background-color: #FFFAFA;
+
+}
+
+.social-logo {
+  position: relative;
+	width: 100px;
+  padding-top: 100px;
+}
+
+.box {
+  width: 70%;
+}
+.popup {
+  width: 70%;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
 /*..........Grid Container about me..........*/
 .item1 {
     grid-area: myArea;
@@ -26,12 +153,13 @@ body {
     display: grid;
     grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .';
     grid-gap: 10px;
-    padding: 10px;
+    padding: 40px;
+    padding-left: 70px;
 }
 
 .grid-container > div {
     text-align: center;
-    padding: 20px 0;
+    padding: 80px 0;
     font-size: 30px;
 }
 
@@ -39,7 +167,7 @@ body {
 	display: block;
 	width: 100%;
 	height: auto;
-	}
+}
 
 .grid-container-text{
     line-height: 1.5;
@@ -51,23 +179,25 @@ body {
 
 /* ..........3 Image design for 3 part..........*/
 
-@media screen and (min-width: 320px) {
-
 section {
     height: 100%;
     width: 100%;
-    scroll-snap-align: start;
 }
 
 .section-footer {
     height: 50%;
     width: 100%;
-    scroll-snap-align: start;
 }
 
-
+#logo{
+  float:left;
+  width:100px;
+  height:100px;
+  padding: 10px 20px;
+  padding-left: 70px;
+}
 #frontpage-box {
-    width: 60%;
+  width: 100%;
 	position: absolute;
 	left: 20%;
 	top: 30%;
@@ -75,7 +205,7 @@ section {
 
 #welcome-pic {
 	width: 100%;
-	height: 560px;
+	height: 100%;
 	background-image: url(../image/intro-pic.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -84,26 +214,15 @@ section {
 }
 
 #portfolio-box {
-    width: 100%;
+  width:100%;
 	position: absolute;
 	left: .5%;
-	top: 135%;
+	top: 130%;
 }
-
 #portfolio-pic {
 	width: 100%;
-	height: 580px;
-	background-image: url(../image/portfolio-pic.jpg);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
-}
-
-#aboutme-pic {
-	width: 100%;
-	height: 200px;
-	background-image: url(../image/DSC02390.jpg);
+	height: 700px;
+	background-image: url(../image/gallery/bg.png);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -127,41 +246,45 @@ img {
 }
 
 /*..........Navigation..........*/
-nav {
-    background-color: #FFFAFA;
-    display: flex;
-    padding: 40px;
-    text-align: center;
-    justify-self: center;
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 30%;
+  z-index: 5;
 }
 
-nav ul {
-    padding: 0px;
-    text-align: center;
+li {
+  float: left;
+  display: inline-block;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  text-align: right;
 }
 
-nav li {
-    display: inline-block;
-    font-size: 20px;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    text-align: right;
+li a {
+  display: block;
+  border-bottom: 3px solid #343138;
+  color: #343138;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
 }
 
-nav li:not(:last-child) {
-    border-right: 1px solid #343138;
-    text-align: right;
+li a:hover:not(.active) {
+border-bottom: 3px solid #86D0D1;
 }
 
-nav a {
-    border-bottom: 3px solid #343138;
-    color: #343138;
-    text-decoration: none;
-}
-
-nav a:hover {
-    border-bottom: 3px solid #86D0D1;
+.main{
+  padding: 16px;
+  margin-top: 30px;
+  height: 150px;
 }
 
 /*..........Text Animation for sections..........*/
@@ -173,7 +296,8 @@ h6{
     font-family: Tangerine;
     letter-spacing: 10px;
     cursor: pointer;
-    padding:10px;
+    padding:20px;
+    padding-left: 70px;
 }
 h6 span{
     transition: .5s linear
@@ -208,7 +332,7 @@ h6:hover span{
 .gallery__column {
     display: block flow;
     flex-direction: column;
-    width: 30%;
+    width: 22%;
 }
 
 .gallery__link {
@@ -220,44 +344,79 @@ h6:hover span{
 }
 .gallery__link:hover .gallery__caption {
     opacity: 1;
+
 }
 .gallery__thumb {
     position: relative;
 }
 .gallery__image {
     display: block;
-    width: 100%;
+    width: 95%;
     transition: 0.3s;
-    border-radius: 10%;
 }
 .gallery__image:hover {
     transform: scale(1.1);
 }
 .gallery__caption {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 100%;
+    left: 10%;
     padding: 25px 15px 15px;
-    width: 100%;
+    width: 80%;
     font-family: Handlee;
-    font-size: 150%;
-    color: #FFFAFA;
+    font-size: 1.5em;
+    color: #86D0D1;
     opacity: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
     transition: 0.3s;
+
 }
 
+
 /*..........Contact..........*/
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #86d0d1;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #ebd2bf;
+}
+
 .contact-container {
     display: flex;
     justify-content: left;
     height: 100%;
+    padding: 50px;
+}
+.form-container {
+    display: flex;
+    justify-content: left;
+    height: 100px;
+    width: 800px;
+    padding: 50px;
 }
 
 .object {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     z-index: 1;
 }
 
@@ -271,11 +430,11 @@ h6:hover span{
 
 .object__intro {
     position: absolute;
-    top: 70%;
+    top: 25%;
     left: 100%;
     transform: translateY(-50%);
-    width: 300px;
-    padding-left: 20px;
+    width: 600px;
+    padding-left: 70px;
     color: var(--highlight-color);
     text-align: left;
 }
@@ -286,6 +445,37 @@ h6:hover span{
     line-break: loose;
     font-size: 25px;
     color: #343138;
+    padding-left: 30px;
+}
+
+
+/*.............Text animation contact.............*/
+.patterns {
+  height: 100vh;
+}
+
+svg text {
+  font-family: Handlee;
+  letter-spacing: 5px;
+  stroke: #343138;
+  font-size: 30px;
+  font-weight: 100;
+  stroke-width: 3;
+
+  animation: textAnimate 5s infinite alternate;
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: hsl(189, 68%, 75%);
+  }
+
+  100% {
+    stroke-dasharray: 50% 0;
+    fill: hsla(189, 68%, 75%, 0%);
+  }
 }
 
 /*..........Footer..........*/
@@ -296,13 +486,7 @@ h6:hover span{
 }
 
 .social-logo {
-	width: 60px;
-	margin: 0 20px;
-}
-
-.arrow-up {
-	width: 50px;
-	margin: 0 10px;
+	width: 100px;
 }
 
 .footer-shape {
@@ -310,4 +494,3 @@ h6:hover span{
     width: 100px;
     margin: 5px 2px;
 }
-
